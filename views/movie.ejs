@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h2>MOVIEMAGIC</h2>
+        <div>
+            <input type="text" name="" id="" placeholder="search film …">
+            <button>Search</button>
+        </div>
+    </header>
+    <main class="mainMovie">
+        <img src="https://image.tmdb.org/t/p/original<%= movie.poster_path%>" alt="<%=movie.title%>">
+        <p>
+            Rating: <%=movie.vote_average%>/10
+        </p>
+        <section class="sectionMovie">
+            <h1>
+                <%=movie.title%>
+            </h1>
+            <p>
+                <%=movie.release_date%>
+            </p>
+            <p>
+                <%=movie.status%>
+            </p>
+            <div class="genreMovie">
+                <%movie.genres.forEach(item=>{%>
+                    <p>
+                        <%=item.name%>
+                    </p>
+                    <%})%>
+            </div>
+            <h3>Plot Summary</h3>
+            <p>
+                <%=movie.overview%>
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
